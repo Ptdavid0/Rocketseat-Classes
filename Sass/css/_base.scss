@@ -1,0 +1,80 @@
+// Partials -> Quando criamos um arquivo com _ no inicio, como em _base.scss,estamos requisitando que este file nao seja compilado, a menos que ele seja importado em outro arquivo.
+
+// Parametros -> Os parametros que enviamos sao diferentes do JS, pois nao colocaremos aspas, mesmo que seja uma string.
+
+// Variavel
+$background-color: #7159c1;
+$text-color: yellow;
+
+//Mixin -> Funciona como uma funcao
+@mixin box-shadow($color) {
+  box-shadow: 5px 5px 4px -2px rgba($color, 0.6);
+}
+
+//Mixin + Condicional
+@mixin make-bold($colorType) {
+  @if $colorType == danger {
+    color: red;
+  } @else {
+    color: yellow;
+  }
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+// Encadeamento
+
+.container {
+  //Estamos incluindo o mixin aqui, podendo passar variaveis
+  @include box-shadow(rgba(0, 0, 0, 0.6));
+  color: white;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+
+  p {
+    @include box-shadow(rgba(0, 0, 0, 0.6));
+    @include make-bold(danger);
+    width: 100px;
+    height: 100px;
+    background-color: #d0d0d0;
+
+    &:hover {
+      color: green;
+    }
+  }
+}
+
+//Usando o @for - Podemos usar through(pegas todo ) ou to(nao pega o ultimo)
+@for $i from 1 through 6 {
+  .text-#{$i} {
+    color: lighten($color: #ee1313, $amount: 5);
+  }
+}
+
+//Usando o @each
+
+$colors: (blue, red, green);
+@each $color in colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+// Temos as funcoes de cor lighten ....
+
+// Heranca
+
+.flex {
+  font-size: larger;
+  color: green;
+}
+
+h2 {
+  //Usando a heranca
+  @extend .flex;
+  font-family: "Courier New", Courier, monospace;
+}

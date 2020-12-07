@@ -1,0 +1,64 @@
+body {
+  background-color: #7159c1;
+  color: yellow;
+}
+
+.container {
+  -webkit-box-shadow: 5px 5px 4px -2px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 4px -2px rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+}
+
+.container p {
+  -webkit-box-shadow: 5px 5px 4px -2px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 5px 4px -2px rgba(0, 0, 0, 0.6);
+  color: red;
+  width: 100px;
+  height: 100px;
+  background-color: #d0d0d0;
+}
+
+.container p:hover {
+  color: green;
+}
+
+.text-1 {
+  color: #f02b2b;
+}
+
+.text-2 {
+  color: #f02b2b;
+}
+
+.text-3 {
+  color: #f02b2b;
+}
+
+.text-4 {
+  color: #f02b2b;
+}
+
+.text-5 {
+  color: #f02b2b;
+}
+
+.text-6 {
+  color: #f02b2b;
+}
+
+.colors-text {
+  color: colors;
+}
+
+.flex, h2 {
+  font-size: larger;
+  color: green;
+}
+
+h2 {
+  font-family: "Courier New", Courier, monospace;
+}
+/*# sourceMappingURL=main.css.map */
